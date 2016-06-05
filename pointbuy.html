@@ -81,6 +81,20 @@
                 total(index) {
                     return this.state.base[index] + this.state.race[index] + this.state.template[index] + this.state.levelBuy[index];
                 },
+                renderRow(attr, index) {
+                    return <tr key={attr}>
+                        <th>{attr}</th>
+                        <td><input type="number" min="8" max="18" value={this.state.base[index]}
+                            onChange={(e) => this.handleChange('base', index, e.target.value)} /></td>
+                        <td><input type="number" min="-20" max="20" value={this.state.race[index]}
+                            onChange={(e) => this.handleChange('race', index, e.target.value)} /></td>
+                        <td><input type="number" min="-20" max="20" value={this.state.template[index]}
+                            onChange={(e) => this.handleChange('template', index, e.target.value)} /></td>
+                        <td><input type="number" min="0" value={this.state.levelBuy[index]}
+                            onChange={(e) => this.handleChange('levelBuy', index, e.target.value)} /></td>
+                        <td className="total">{this.total(index)}</td>
+                    </tr>;
+                },
                 render() {
                     return <table>
                         <thead>
@@ -93,21 +107,7 @@
                                 <th>Total</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            {this.attrs.map((attr, index) =>
-                                <tr key={attr}>
-                                    <th>{attr}</th>
-                                    <td><input type="number" min="8" max="18" value={this.state.base[index]}
-                                        onChange={(e) => this.handleChange('base', index, e.target.value)} /></td>
-                                    <td><input type="number" min="-20" max="20" value={this.state.race[index]}
-                                        onChange={(e) => this.handleChange('race', index, e.target.value)} /></td>
-                                    <td><input type="number" min="-20" max="20" value={this.state.template[index]}
-                                        onChange={(e) => this.handleChange('template', index, e.target.value)} /></td>
-                                    <td><input type="number" min="0" value={this.state.levelBuy[index]}
-                                        onChange={(e) => this.handleChange('levelBuy', index, e.target.value)} /></td>
-                                    <td className="total">{this.total(index)}</td>
-                                </tr>)}
-                        </tbody>
+                        <tbody>{this.attrs.map(this.renderRow, this)}</tbody>
                         <tfoot>
                             <tr>
                                 <td></td>
