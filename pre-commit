@@ -1,0 +1,5 @@
+#!/bin/bash
+
+. ~/.nvm/nvm.sh
+nvm use
+exec npm shrinkwrap --dev
