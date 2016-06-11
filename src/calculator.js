@@ -1,7 +1,6 @@
-// Future me: I apologize for the use of reduce().
 import React from 'react';
-import ReactDOM from 'react-dom';
 
+// Future me: I apologize for the use of reduce().
 const Calculator = React.createClass({
     attrs: ['Str', 'Dex', 'Con', 'Int', 'Wis', 'Cha'],
     buyCosts: {
@@ -83,7 +82,5 @@ const Calculator = React.createClass({
         </table>;
     }
 });
-ReactDOM.render(
-    <Calculator />,
-    document.getElementById("root")
-);
+
+export default Calculator;
