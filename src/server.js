@@ -3,6 +3,7 @@
  */
 import ReactDOMServer from 'react-dom/server';
 import Page from './pointbuy.js';
+import styles from './styles.css';
 
 const head = `
 <!DOCTYPE html>
@@ -10,31 +11,7 @@ const head = `
 <head>
     <meta charset="utf-8">
     <title>D&amp;D 3.5 Point Buy Calculator</title>
-    <style>
-        body {
-            font-family: "Fira Sans", sans-serif;
-            color: black;
-            background: white;
-        }
-        h1 {
-            font-family: "Fondamento", sans-serif;
-        }
-        th {
-            text-align: left;
-            font-weight: normal;
-        }
-        td.total {
-            text-align: right;
-        }
-        input[type=number] {
-            color: inherit;
-            border: none;
-            background: transparent;
-            width: 3em;
-            font: inherit;
-            text-align: right;
-        }
-    </style>
+    <style>${styles}</style>
     <script defer src="client.js"></script>
 </head>
 <body><div id="app">`;

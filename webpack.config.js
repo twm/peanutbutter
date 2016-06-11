@@ -15,6 +15,10 @@ const baseConfig = {
                 loaders: ['file'],
             },
             {
+                test: /\.css$/,
+                loaders: ['css'],
+            },
+            {
                 test: /\.js$/,
                 loaders: ['babel'],
                 exclude: /node_modules/,
