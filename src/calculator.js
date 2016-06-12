@@ -47,17 +47,20 @@ const Calculator = React.createClass({
         return this.state.base[index] + this.state.race[index] + this.state.template[index] + this.state.levelBuy[index];
     },
     renderRow(attr, index) {
+        var total = this.total(index);
+        var mod = Math.floor((total - 10) / 2);
+        var modStr = (mod > 0) ? "+" + mod : "" + mod;
         return <tr key={attr}>
             <th>{attr}</th>
             <td><input type="number" min="8" max="18" value={this.state.base[index]}
-                onChange={(e) => this.handleChange('base', index, e.target.value)} /></td>
+                onChange={e => this.handleChange('base', index, e.target.value)} /></td>
             <td><input type="number" min="-20" max="20" value={this.state.race[index]}
-                onChange={(e) => this.handleChange('race', index, e.target.value)} /></td>
+                onChange={e => this.handleChange('race', index, e.target.value)} /></td>
             <td><input type="number" min="-20" max="20" value={this.state.template[index]}
-                onChange={(e) => this.handleChange('template', index, e.target.value)} /></td>
+                onChange={e => this.handleChange('template', index, e.target.value)} /></td>
             <td><input type="number" min="0" value={this.state.levelBuy[index]}
-                onChange={(e) => this.handleChange('levelBuy', index, e.target.value)} /></td>
-            <td className="total">{this.total(index)}</td>
+                onChange={e => this.handleChange('levelBuy', index, e.target.value)} /></td>
+            <td className="total">{total} ({modStr})</td>
         </tr>;
     },
     render() {
