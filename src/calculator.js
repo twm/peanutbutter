@@ -52,13 +52,13 @@ const Calculator = React.createClass({
         var modStr = (mod > 0) ? "+" + mod : "" + mod;
         return <tr key={attr}>
             <th>{attr}</th>
-            <td><input type="number" min="8" max="18" value={this.state.base[index]}
+            <td><input type="number" min="8" max="18" value={this.state.base[index]} autoComplete="off"
                 onChange={e => this.handleChange('base', index, e.target.value)} /></td>
-            <td><input type="number" min="-20" max="20" value={this.state.race[index]}
+            <td><input type="number" min="-20" max="20" value={this.state.race[index]} autoComplete="off"
                 onChange={e => this.handleChange('race', index, e.target.value)} /></td>
-            <td><input type="number" min="-20" max="20" value={this.state.template[index]}
+            <td><input type="number" min="-20" max="20" value={this.state.template[index]} autoComplete="off"
                 onChange={e => this.handleChange('template', index, e.target.value)} /></td>
-            <td><input type="number" min="0" value={this.state.levelBuy[index]}
+            <td><input type="number" min="0" value={this.state.levelBuy[index]} autoComplete="off"
                 onChange={e => this.handleChange('levelBuy', index, e.target.value)} /></td>
             <td className="total">{total} ({modStr})</td>
         </tr>;
