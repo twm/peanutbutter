@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const ServerRenderPlugin = require('./src/server-render-webpack-plugin.js');
+const ServerRenderPlugin = require('./src/render-webpack-plugin.js');
 
 const baseConfig = {
     context: __dirname + '/src',
@@ -27,30 +27,26 @@ const baseConfig = {
     },
 };
 
-const clientPlugins = [
-    new webpack.LoaderOptionsPlugin({
-        minimize: false,
-        debug: true,
-    }),
-    // new webpack.optimize.UglifyJsPlugin({}),
-    new webpack.DefinePlugin({
-        // 'process.env': { NODE_ENV: '"production"' },
-    }),
-];
+// This plugin consumes the render.js bundle.  Its fileEmitter() method returns
+// a plugin used in the client build to call render.js and build index.html.
+// Any assets generated as a side effect of the server build are also output.
+// XXX: Currently the SVG image is output twice...
+const renderer = new ServerRenderPlugin();
 
 // Multiple configs: http://webpack.github.io/docs/configuration.html#multiple-configurations
 module.exports = [
     Object.assign({}, baseConfig, {
         entry: {
-            'server': './server.js',
+            'render': './render.js',
         },
         output: {
             path: __dirname + '/dist',
             filename: "[name].js",
+            // Export the module as "var render = {...}"
+            library: 'render',
+            libraryTarget: 'var',
         },
-        plugins: [
-            new ServerRenderPlugin(),
-        ],
+        plugins: [renderer],
     }),
     Object.assign({}, baseConfig, {
         entry: {
@@ -58,9 +54,18 @@ module.exports = [
         },
         output: {
             path: __dirname + '/dist',
-            filename: "[name].js",
-            library: 'render',
+            filename: "[name].[hash].js",
         },
-        plugins: clientPlugins,
+        plugins: [
+            new webpack.LoaderOptionsPlugin({
+                minimize: false,
+                debug: true,
+            }),
+            new webpack.optimize.UglifyJsPlugin({}),
+            new webpack.DefinePlugin({
+                'process.env': { NODE_ENV: '"production"' },
+            }),
+            renderer.fileEmitter('index.html'),
+        ],
     }),
 ];
