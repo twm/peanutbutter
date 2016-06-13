@@ -7,11 +7,15 @@ h1 {
     font-family: "Fondamento", sans-serif;
 }
 th {
-    text-align: left;
     font-weight: normal;
 }
-td.total {
-    text-align: right;
+th:first-child {
+    text-align: left;
+    font-size: 1.5rem;
+}
+td {
+    width: 3.5rem;
+    text-align: center;
 }
 input[type=number] {
     color: inherit;
@@ -19,5 +23,5 @@ input[type=number] {
     background: transparent;
     width: 3em;
     font: inherit;
-    text-align: right;
+    text-align: center;
 }

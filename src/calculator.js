@@ -1,5 +1,43 @@
 import React from 'react';
 
+const Attribute = React.createClass({
+    propTypes: {
+        value: React.PropTypes.number.isRequired,
+    },
+    modifier() {
+        var mod = Math.floor((this.props.value - 10) / 2);
+        return (mod > 0) ? "+" + mod : "" + mod;
+    },
+    render() {
+        return <div style={{
+            position: 'relative',
+            color: 'black',
+            background: '#f0f0f0',
+            borderRadius: '50%',
+            width: '3.5rem',
+            height: '3.5rem',
+            lineHeight: '3.5rem',
+            textAlign: 'center',
+            fontSize: '1.5rem',
+        }}>
+            {this.props.value}
+            <span style={{
+                display: 'block',
+                position: 'absolute',
+                width: '1.75rem',
+                height: '1.75rem',
+                borderRadius: '50%',
+                background: 'black',
+                color: 'white',
+                top: 'calc(50% - (3rem / 2))',
+                lineHeight: '1.75rem',
+                right: '-1rem',
+                fontSize: '1rem',
+            }}>{this.modifier()}</span>
+        </div>;
+    }
+});
+
 // Future me: I apologize for the use of reduce().
 const Calculator = React.createClass({
     attrs: ['Str', 'Dex', 'Con', 'Int', 'Wis', 'Cha'],
@@ -47,9 +85,6 @@ const Calculator = React.createClass({
         return this.state.base[index] + this.state.race[index] + this.state.template[index] + this.state.levelBuy[index];
     },
     renderRow(attr, index) {
-        var total = this.total(index);
-        var mod = Math.floor((total - 10) / 2);
-        var modStr = (mod > 0) ? "+" + mod : "" + mod;
         return <tr key={attr}>
             <th>{attr}</th>
             <td><input type="number" min="8" max="18" value={this.state.base[index]} autoComplete="off"
@@ -60,7 +95,7 @@ const Calculator = React.createClass({
                 onChange={e => this.handleChange('template', index, e.target.value)} /></td>
             <td><input type="number" min="0" value={this.state.levelBuy[index]} autoComplete="off"
                 onChange={e => this.handleChange('levelBuy', index, e.target.value)} /></td>
-            <td className="total">{total} ({modStr})</td>
+            <td className="total"><Attribute value={this.total(index)} /></td>
         </tr>;
     },
     render() {
