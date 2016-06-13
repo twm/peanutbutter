@@ -14,8 +14,17 @@ th:first-child {
     font-size: 1.5rem;
 }
 td {
-    width: 3.5rem;
     text-align: center;
+}
+td.operator {
+    width: 1.5em;
+    color: #999;
+}
+td.input {
+    width: 3.5rem;
+}
+tfoot td {
+    text-align: left;
 }
 input[type=number] {
     color: inherit;

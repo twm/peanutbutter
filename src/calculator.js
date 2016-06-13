@@ -86,15 +86,23 @@ const Calculator = React.createClass({
     },
     renderRow(attr, index) {
         return <tr key={attr}>
-            <th>{attr}</th>
-            <td><input type="number" min="8" max="18" value={this.state.base[index]} autoComplete="off"
-                onChange={e => this.handleChange('base', index, e.target.value)} /></td>
-            <td><input type="number" min="-20" max="20" value={this.state.race[index]} autoComplete="off"
-                onChange={e => this.handleChange('race', index, e.target.value)} /></td>
-            <td><input type="number" min="-20" max="20" value={this.state.template[index]} autoComplete="off"
-                onChange={e => this.handleChange('template', index, e.target.value)} /></td>
-            <td><input type="number" min="0" value={this.state.levelBuy[index]} autoComplete="off"
-                onChange={e => this.handleChange('levelBuy', index, e.target.value)} /></td>
+            <th colSpan="2">{attr}</th>
+            <td className="input">
+                <input type="number" min="8" max="18" value={this.state.base[index]} autoComplete="off"
+                    onChange={e => this.handleChange('base', index, e.target.value)} /></td>
+            <td colSpan="2" className="operator">+</td>
+            <td className="input">
+                <input type="number" min="-20" max="20" value={this.state.race[index]} autoComplete="off"
+                    onChange={e => this.handleChange('race', index, e.target.value)} /></td>
+            <td colSpan="2" className="operator">+</td>
+            <td className="input">
+                <input type="number" min="-20" max="20" value={this.state.template[index]} autoComplete="off"
+                    onChange={e => this.handleChange('template', index, e.target.value)} /></td>
+            <td colSpan="2" className="operator">+</td>
+            <td className="input">
+                <input type="number" min="0" value={this.state.levelBuy[index]} autoComplete="off"
+                    onChange={e => this.handleChange('levelBuy', index, e.target.value)} /></td>
+            <td colSpan="2" className="operator">=</td>
             <td className="total"><Attribute value={this.total(index)} /></td>
         </tr>;
     },
@@ -103,18 +111,19 @@ const Calculator = React.createClass({
             <thead>
                 <tr>
                     <td></td>
-                    <th>Base</th>
-                    <th>Race</th>
-                    <th>Template</th>
-                    <th>Levels</th>
-                    <th>Total</th>
+                    <th colSpan="3">Base</th>
+                    <th colSpan="3">Race</th>
+                    <th colSpan="3">Template</th>
+                    <th colSpan="3">Levels</th>
+                    <td></td>
+                    <th colSpan="1">Total</th>
                 </tr>
             </thead>
             <tbody>{this.attrs.map(this.renderRow, this)}</tbody>
             <tfoot>
                 <tr>
-                    <td></td>
-                    <td colSpan="3">{this.pointCost()} points spent<br />Levels {this.levelRange()}</td>
+                    <td colSpan="2"></td>
+                    <td colSpan="15">{this.pointCost()} points spent<br />Levels {this.levelRange()}</td>
                 </tr>
             </tfoot>
         </table>;
