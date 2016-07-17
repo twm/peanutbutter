@@ -26,7 +26,7 @@ const Attribute = React.createClass({
     render() {
         return <div style={{
             position: 'relative',
-            color: 'black',
+            color: '#333',
             background: '#f0f0f0',
             borderRadius: '50%',
             width: '3.5rem',
@@ -42,8 +42,8 @@ const Attribute = React.createClass({
                 width: '1.75rem',
                 height: '1.75rem',
                 borderRadius: '50%',
-                background: 'black',
-                color: 'white',
+                background: '#333',
+                color: '#f0f0f0',
                 top: 'calc(50% - (3rem / 2))',
                 lineHeight: '1.75rem',
                 right: '-1rem',
