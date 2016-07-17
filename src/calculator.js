@@ -1,4 +1,19 @@
 import React from 'react';
+import strUrl from './str.svg';
+import dexUrl from './dex.svg';
+import conUrl from './con.svg';
+import intUrl from './int.svg';
+import wisUrl from './wis.svg';
+import chaUrl from './cha.svg';
+
+const IMAGES = {
+    'Str': strUrl,
+    'Dex': dexUrl,
+    'Con': conUrl,
+    'Int': intUrl,
+    'Wis': wisUrl,
+    'Cha': chaUrl,
+};
 
 const Attribute = React.createClass({
     propTypes: {
@@ -86,7 +101,7 @@ const Calculator = React.createClass({
     },
     renderRow(attr, index) {
         return <tr key={attr}>
-            <th colSpan="2">{attr}</th>
+            <th colSpan="2"><img src={IMAGES[attr]} alt={attr} width="64" height="32" /></th>
             <td className="input">
                 <input type="number" min="8" max="18" value={this.state.base[index]} autoComplete="off"
                     onChange={e => this.handleChange('base', index, e.target.value)} /></td>

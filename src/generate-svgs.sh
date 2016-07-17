@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 scour_it() {
     scour --no-line-breaks \
@@ -12,4 +12,13 @@ scour_it() {
         -o "$2"
 }
 
-scour_it header.inkscape.svg header.svg
+set -ex
+
+for f in *.inkscape.svg
+do
+    target="${f/\.inkscape/}"
+    if [[ $f -nt $target ]]
+    then
+        scour_it "$f" "$target"
+    fi
+done
