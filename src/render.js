@@ -12,7 +12,8 @@ export default function render(client) {
         <html lang="en_US">
         <head>
             <meta charset="utf-8">
-            <title>D&amp;D 3.5 Point Buy Calculator</title>
+            <meta name="viewport" content="width=550px">
+            <title>Point Buy Calculator</title>
             <style>${styles}</style>
             <script defer src="${client}"></script>
         </head>

@@ -4,7 +4,7 @@ body {
     background: white;
 }
 h1 {
-    font-family: "Fondamento", sans-serif;
+    margin: 0;
 }
 th {
     font-weight: normal;
