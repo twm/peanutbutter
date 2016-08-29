@@ -29,7 +29,7 @@
     },
     "ansi-escapes": {
       "version": "1.4.0",
-      "from": "ansi-escapes@>=1.1.0 <2.0.0"
+      "from": "ansi-escapes@1.4.0"
     },
     "ansi-regex": {
       "version": "2.0.0",
@@ -47,7 +47,7 @@
     },
     "argparse": {
       "version": "1.0.7",
-      "from": "argparse@>=1.0.7 <2.0.0"
+      "from": "argparse@1.0.7"
     },
     "arr-diff": {
       "version": "2.0.0",
@@ -61,7 +61,7 @@
     },
     "array-union": {
       "version": "1.0.1",
-      "from": "array-union@>=1.0.1 <2.0.0"
+      "from": "array-union@1.0.1"
     },
     "array-uniq": {
       "version": "1.0.2",
@@ -518,11 +518,11 @@
     },
     "cli-cursor": {
       "version": "1.0.2",
-      "from": "cli-cursor@>=1.0.1 <2.0.0"
+      "from": "cli-cursor@1.0.2"
     },
     "cli-width": {
       "version": "2.1.0",
-      "from": "cli-width@>=2.0.0 <3.0.0"
+      "from": "cli-width@2.1.0"
     },
     "cliui": {
       "version": "2.1.0",
@@ -831,7 +831,7 @@
     },
     "esprima": {
       "version": "2.7.2",
-      "from": "esprima@>=2.6.0 <3.0.0"
+      "from": "esprima@2.7.2"
     },
     "esrecurse": {
       "version": "4.1.0",
@@ -871,7 +871,7 @@
     },
     "exit-hook": {
       "version": "1.1.1",
-      "from": "exit-hook@>=1.0.0 <2.0.0"
+      "from": "exit-hook@1.1.1"
     },
     "expand-brackets": {
       "version": "0.1.5",
@@ -915,7 +915,7 @@
     },
     "file-loader": {
       "version": "0.8.5",
-      "from": "file-loader@>=0.8.5 <0.9.0"
+      "from": "file-loader@0.8.5"
     },
     "filename-regex": {
       "version": "2.0.0",
@@ -959,11 +959,11 @@
     },
     "generate-function": {
       "version": "2.0.0",
-      "from": "generate-function@>=2.0.0 <3.0.0"
+      "from": "generate-function@2.0.0"
     },
     "generate-object-property": {
       "version": "1.2.0",
-      "from": "generate-object-property@>=1.1.0 <2.0.0"
+      "from": "generate-object-property@1.2.0"
     },
     "get-stdin": {
       "version": "4.0.1",
@@ -996,7 +996,7 @@
       "dependencies": {
         "glob": {
           "version": "6.0.4",
-          "from": "glob@>=6.0.1 <7.0.0"
+          "from": "glob@6.0.4"
         }
       }
     },
@@ -1073,7 +1073,7 @@
     },
     "imurmurhash": {
       "version": "0.1.4",
-      "from": "imurmurhash@>=0.1.4 <0.2.0"
+      "from": "imurmurhash@0.1.4"
     },
     "indexes-of": {
       "version": "1.0.1",
@@ -1095,7 +1095,7 @@
     },
     "inquirer": {
       "version": "0.12.0",
-      "from": "inquirer@>=0.12.0 <0.13.0"
+      "from": "inquirer@0.12.0"
     },
     "interpret": {
       "version": "1.0.1",
@@ -1195,7 +1195,7 @@
     },
     "is-plain-obj": {
       "version": "1.1.0",
-      "from": "is-plain-obj@>=1.0.0 <2.0.0"
+      "from": "is-plain-obj@1.1.0"
     },
     "is-posix-bracket": {
       "version": "0.1.1",
@@ -1208,7 +1208,7 @@
     },
     "is-property": {
       "version": "1.0.2",
-      "from": "is-property@>=1.0.0 <2.0.0"
+      "from": "is-property@1.0.2"
     },
     "is-resolvable": {
       "version": "1.0.0",
@@ -1272,7 +1272,7 @@
     },
     "jsonify": {
       "version": "0.0.0",
-      "from": "jsonify@>=0.0.0 <0.1.0"
+      "from": "jsonify@0.0.0"
     },
     "jsonpointer": {
       "version": "2.0.0",
@@ -1479,7 +1479,7 @@
     },
     "onetime": {
       "version": "1.1.0",
-      "from": "onetime@>=1.0.0 <2.0.0"
+      "from": "onetime@1.1.0"
     },
     "optionator": {
       "version": "0.8.1",
@@ -1500,7 +1500,7 @@
     },
     "os-homedir": {
       "version": "1.0.1",
-      "from": "os-homedir@>=1.0.0 <2.0.0"
+      "from": "os-homedir@1.0.1"
     },
     "os-locale": {
       "version": "1.4.0",
@@ -1872,7 +1872,7 @@
     },
     "readline2": {
       "version": "1.0.1",
-      "from": "readline2@>=1.0.1 <2.0.0"
+      "from": "readline2@1.0.1"
     },
     "reduce-css-calc": {
       "version": "1.2.4",
@@ -1893,7 +1893,8 @@
       "dependencies": {
         "balanced-match": {
           "version": "0.1.0",
-          "from": "balanced-match@>=0.1.0 <0.2.0"
+          "from": "balanced-match@0.1.0",
+          "resolved": "https://registry.npmjs.org/balanced-match/-/balanced-match-0.1.0.tgz"
         }
       }
     },
@@ -1957,7 +1958,7 @@
     },
     "restore-cursor": {
       "version": "1.0.1",
-      "from": "restore-cursor@>=1.0.1 <2.0.0"
+      "from": "restore-cursor@1.0.1"
     },
     "right-align": {
       "version": "0.1.3",
@@ -1976,11 +1977,11 @@
     },
     "run-async": {
       "version": "0.1.0",
-      "from": "run-async@>=0.1.0 <0.2.0"
+      "from": "run-async@0.1.0"
     },
     "rx-lite": {
       "version": "3.1.2",
-      "from": "rx-lite@>=3.1.2 <4.0.0"
+      "from": "rx-lite@3.1.2"
     },
     "sax": {
       "version": "1.2.1",
@@ -2069,7 +2070,7 @@
     },
     "sprintf-js": {
       "version": "1.0.3",
-      "from": "sprintf-js@>=1.0.2 <1.1.0"
+      "from": "sprintf-js@1.0.3"
     },
     "stream-browserify": {
       "version": "2.0.1",
@@ -2101,7 +2102,7 @@
     },
     "strip-json-comments": {
       "version": "1.0.4",
-      "from": "strip-json-comments@>=1.0.1 <1.1.0"
+      "from": "strip-json-comments@1.0.4"
     },
     "supports-color": {
       "version": "2.0.0",
@@ -2130,7 +2131,7 @@
     },
     "text-table": {
       "version": "0.2.0",
-      "from": "text-table@>=0.2.0 <0.3.0"
+      "from": "text-table@0.2.0"
     },
     "through": {
       "version": "2.3.8",
@@ -2167,7 +2168,7 @@
     },
     "typedarray": {
       "version": "0.0.6",
-      "from": "typedarray@>=0.0.5 <0.1.0"
+      "from": "typedarray@0.0.6"
     },
     "ua-parser-js": {
       "version": "0.7.10",
