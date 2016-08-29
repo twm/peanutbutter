@@ -34,3 +34,9 @@ input[type=number] {
     font: inherit;
     text-align: center;
 }
+
+/* Copyright notice */
+small, small :link, small :visited {
+    font-size: 0.8rem;
+    color: lightgray;
+}
