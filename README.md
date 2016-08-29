@@ -19,6 +19,8 @@ Open `dist/index.html` in a web browser.
 
 ### Install the pre-commit hook
 
+The pre-commit hook automatically updates `npm-shrinkwrap.json` when `package.json` changes.
+
 ```sh
 ln -s ../../pre-commit .git/hooks/pre-commit
 ```
