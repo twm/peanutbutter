@@ -138,7 +138,7 @@ const Calculator = React.createClass({
             <tfoot>
                 <tr>
                     <td colSpan="2"></td>
-                    <td colSpan="15">{this.pointCost()} points spent<br />Levels {this.levelRange()}</td>
+                    <td colSpan="15">{this.pointCost()} points spent<br />Levels {this.levelRange()}<br />3.5 ruleset</td>
                 </tr>
             </tfoot>
         </table>;
